@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz 01</title>
+</head>
+<body>
+<script>
+
+    /*Aufgabe 1*/
+
+    const foo = () => true;
+    document.writeln(foo());
+    //-> true
+
+    const foo2 = () => true;
+    document.writeln(foo2(1));
+    //-> true
+
+    const foo3 = true;
+    //document.writeln(foo3());
+    //-> Type Error
+
+    const foo4 = (x) => true;
+    document.writeln(foo4());
+    //-> true
+
+    function foo5() {
+        return true;
+    }
+    document.writeln(foo5());
+    //-> true
+
+    function foo6() {
+        true;
+    }
+    document.writeln(foo6());
+    //-> undefined
+
+    function foo7() {
+        return true;
+    }
+    document.writeln(foo7);
+    //-> function foo7() {return true;}
+
+
+    /*Aufgabe 4*/
+
+    const plus = a => b => a+b;
+
+    const x_ = Math.random();
+    const y_ = Math.random();
+    const plus3 = plus(3);
+    document.writeln(plus(x_)(y_) === x_ + y_ && plus3(y_) === y_ + 3);
+    //-> true
+
+</script>
+</body>
+</html>
