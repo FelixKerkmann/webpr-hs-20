@@ -52,7 +52,7 @@
 
         function inBounds(x, max) {
             if (x < 0)   { return max - 1 }
-            if (x > max) { return 0 }
+            if (x >= max) { return 0 }
             return x
         }
 

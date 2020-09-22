@@ -7,7 +7,65 @@
 <body>
     <script>
 
+        // x = 1;
+        // document.writeln(x === 1);
+        //
+        // function foo() {
+        //     x = 2;
+        //     document.writeln(x === 2);
+        //     return;
+        //     var x;
+        // }
+        // foo();
+        // document.writeln(x === 1);
 
+
+        // const x = 1;
+        // document.writeln(x === 1);
+        //
+        // function foo() {
+        //     const x = 2;
+        //     document.writeln(x === 2);
+        // }
+        // foo();
+        // document.writeln(x === 1);
+
+
+        // let x = 1;
+        // document.writeln(x === 1);
+        //
+        // function foo() {
+        //     const x = 2;
+        //     document.writeln(x === 2);
+        // }
+        //
+        // ( () => { let x = 2; document.writeln(x === 2); } ) () //IIFE
+        //
+        // foo();
+        // document.writeln(x === 1);
+
+
+        // const id = x => x;
+        // const konst = x => y => x;
+        // document.writeln( id(id) === id );
+        // document.writeln( konst(id)(undefined) === id );
+        //
+        // // const snd = x => y => y;
+        // // const snd = x => id;
+        // const snd = konst(id);
+        // document.writeln( snd(undefined)(id) === id );
+
+        let x = 0;
+        ( () => {
+            let x = 2;
+            return x;
+        })();
+
+        try{
+            document.writeln(x === 0);
+        } catch (e) {
+            document.writeln(false)
+        }
 
 
 
