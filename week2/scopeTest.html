@@ -6,6 +6,15 @@
 </head>
 <body>
     <script>
+        let x = 1;
+        document.writeln(x === 1);
+        function foo() {
+            const x = 2;
+            document.writeln(x === 2);
+        }
+        ( () => { let x = 2; document.writeln(x === 2) } ) () // IIFE
+        foo();
+        document.writeln(x === 1);
 
         // x = 1;
         // document.writeln(x === 1);
@@ -19,6 +28,11 @@
         // foo();
         // document.writeln(x === 1);
 
+        const id    = x => x;
+        const konst = x => y => x;
+
+        document.writeln( id(id) === id );
+        document.writeln( konst(id)(undefined) === id );
 
         // const x = 1;
         // document.writeln(x === 1);
@@ -67,6 +81,8 @@
             document.writeln(false)
         }
 
+        const snd = konst (id);
+        document.writeln( snd(undefined)(id) === id );
 
 
     </script>
