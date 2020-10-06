@@ -25,6 +25,7 @@ ok.push( and(T)(F) === F );
 ok.push( and(F)(T) === F );
 ok.push( and(T)(T) === T );
 
+
 // or
 ok.push( or(F)(F) === F );
 ok.push( or(T)(F) === T );
@@ -72,9 +73,9 @@ ok.push( dierk(lastname)  === "König");
 // ok.push( team(deputy)(ln) === "Federer");
 //
 // // Pair equal
-//
-// either
 
+// either
+//
 const safeDiv = num => divisor =>
     divisor === 0
     ? Left("schlecht!")
@@ -84,7 +85,6 @@ either( safeDiv(1)(0)  )
       (x => console.error(x))
       (x => console.log(x));
 
-//
 // const [Cash, CreditCard, Invoice, PayPal, pay] = Choice(4);
 // const cash = Cash ();
 // const card = CreditCard ("0000-1111-2222-3333");
