@@ -182,7 +182,9 @@
     const either = e => f => g => e (f) (g);
     const id = x => x;
     // my code
-    const eShow = x => x;
+    const eShow = x => either(x)
+        (y => ("Cannot divide by 0"))
+        (y => ("Result is: "+y));
 
     // Test
     const x_ = Math.random();
@@ -191,7 +193,8 @@
             ? Left("Cannot divide by 0")
             : Right(num / divisor);
 
-    eShow(safeDiv(1)(0)) === "Cannot divide by 0" && eShow(safeDiv(x_)(1)) === "Result is: "+x_;
+    document.writeln(eShow(safeDiv(1)(0)) === "Cannot divide by 0") //&&
+    document.writeln(eShow(safeDiv(x_)(1)) === "Result is: "+x_);
 
 </script>
 </body>
