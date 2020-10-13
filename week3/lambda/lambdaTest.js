@@ -57,6 +57,7 @@ ok.push( dierk(lastname)  === "König");
 // ok.push( tdierk(tlastname)  === "König");
 // ok.push( tdierk(tage)       === 50);
 
+
 // tuple
 const [Person, fn, ln, ag] = Tuple(3);
 const person = Person("Dierk")("König")(50);
@@ -83,6 +84,11 @@ const safeDiv = num => divisor =>
 either( safeDiv(1)(0)  )
       (x => console.error(x))
       (x => console.log(x));
+
+// safeDiv(1)(0)
+//       ( console.error)
+//       ( console.log);
+
 
 
 const [Cash, CreditCard, Invoice, PayPal, pay] = Choice(4);
