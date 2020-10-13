@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz 05</title>
+</head>
+<body>
+<script>
+    // Aufgabe Q10 a
+    // Your user has entered a new business rule on how to calculate
+    // this year's bonuses. He entered a formula through a web form and it is available
+    // through the _string_ variable 'bonusFormula'.
+    //     The formula refers to the employee as 'employee' like in
+    // 'employee.bonus = employee.revenue * 0.2'
+    //
+    // Provide a function (or lambda expression) named 'bonusCalculation' that
+    // calculates an employee's bonus by using the user-provided bonusFormula.
+    //
+    // Do _NOT_ use the "Function" class.
+    //
+    // Your solution will be tested against:
+    const factor_ = 0.2;
+    const bonusFormula = 'e.bonus = e.revenue * 0.2';
+    const bonusCalculation = x => eval(bonusFormula);
+
+    const e = {revenue: 10000, bonus: null};
+    document.writeln(bonusCalculation(e));
+    document.writeln(e.bonus === e.revenue * factor_);
+
+    // Aufgabe Q10 b
+    // Your user has entered a new business rule on how to calculate
+    // this year's bonuses. He entered a formula through a web form and it is available
+    // through the _string_ variable 'bonusFormula'.
+    //     The formula refers to the employee as 'employee' like in
+    // 'employee.revenue * 0.2' (note that this only calculates but does not set the bonus)
+    //
+    // Provide a function (or lambda expression) named 'bonusCalculation' that
+    // calculates an employee's bonus by using the user-provided bonusFormula.
+    //
+    // Since we will give bonuses to many employees, do _NOT_ use the 'eval' function
+    // and do _NOT_ use side effects like setting surrounding variables.
+    //
+    // Your solution will be tested against:
+
+    // const e = {revenue: 10000, bonus: null};
+    // bonusCalculation(e);
+    // e.bonus === e.revenue * factor_;
+
+
+</script>
+
+</body>
+</html>
