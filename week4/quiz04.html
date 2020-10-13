@@ -16,15 +16,15 @@
     // document.writeln(([1,2,3,4,5,6].filter(divides(3)))); // === "3,6");
 
     /* Aufgabe Q9f */
-    const join = a => b => b+a;
-    document.writeln(([1,2,3].reduce(join('-')))); // === '1-2-3');
+    const join = a => b => b+a ;
+    document.writeln([1,2,3].join('-')); // === '1-2-3');
 
-    const plus = (accu, cur) => accu + cur;
-    document.writeln([1, 2, 3].reduce((accu, cur) => accu + cur));
-    document.writeln([1, 2, 3].reduce(plus));
-    // variant with initial accu value as 2nd argument
-    // then cur starts at first element
-    document.writeln([1, 2, 3].reduce(plus, 0));
+    // const plus = (accu, cur) => accu + cur;
+    // document.writeln([1, 2, 3].reduce((accu, cur) => accu + cur));
+    // document.writeln([1, 2, 3].reduce(plus));
+    // // variant with initial accu value as 2nd argument
+    // // then cur starts at first element
+    // document.writeln([1, 2, 3].reduce(plus, 0));
 
 </script>
 
