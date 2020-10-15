@@ -10,10 +10,10 @@ function start() {
     const context      = canvas.getContext("2d");
 
     // todo: how to display?
-    display(context, x => eval(userFunction.value));
-    userFunction.onchange = evt => display(context, x => eval(userFunction.value));
-    // display(context,Function("x", "return " + userFunction.value));
-    // userFunction.onchange = evt => display(context, Function("x", "return " + userFunction.value));
+    // display(context, x => eval(userFunction.value));
+    // userFunction.onchange = evt => display(context, x => eval(userFunction.value));
+    display(context,Function("x", "return " + userFunction.value));
+    userFunction.onchange = evt => display(context, Function("x", "return " + userFunction.value));
 }
 
 function display(context, f) {

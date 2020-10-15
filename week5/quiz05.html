@@ -19,13 +19,16 @@
     // Do _NOT_ use the "Function" class.
     //
     // Your solution will be tested against:
-    const factor_ = 0.2;
-    const bonusFormula = 'e.bonus = e.revenue * 0.2';
-    const bonusCalculation = x => eval(bonusFormula);
 
-    const e = {revenue: 10000, bonus: null};
-    document.writeln(bonusCalculation(e));
-    document.writeln(e.bonus === e.revenue * factor_);
+    // const factor_ = 0.2;
+    // let bonusFormula = 'employee.bonus = employee.revenue * 0.2';
+    // function bonusCalculation (x) {
+    //     bonusFormula = bonusFormula.replace(/employee/gi, Object.keys({x})[0]);
+    //     eval(bonusFormula);
+    // }
+    // const e = {revenue: 10000, bonus: null};
+    // bonusCalculation(e);
+    // document.writeln(e.bonus === e.revenue * factor_);
 
     // Aufgabe Q10 b
     // Your user has entered a new business rule on how to calculate
@@ -42,9 +45,14 @@
     //
     // Your solution will be tested against:
 
-    // const e = {revenue: 10000, bonus: null};
-    // bonusCalculation(e);
-    // e.bonus === e.revenue * factor_;
+    const factor_ = 0.2;
+    let bonusFormula = 'employee.bonus = employee.revenue * 0.2';
+
+    const bonusCalculation = Function("employee","return "+bonusFormula);
+
+    const e = {revenue: 10000, bonus: null};
+    bonusCalculation(e);
+    document.writeln(e.bonus === e.revenue * factor_);
 
 
 </script>
