@@ -14,6 +14,7 @@ function start() {
     // userFunction.onchange = evt => display(context, x => eval(userFunction.value));
     display(context,Function("x", "return " + userFunction.value));
     userFunction.onchange = evt => display(context, Function("x", "return " + userFunction.value));
+
 }
 
 function display(context, f) {
@@ -29,6 +30,7 @@ function display(context, f) {
     context.moveTo(normx(minX), normy(f(minX)));
 
     const stride = (maxX - minX) / 1000; // 100 Stützstellen
+
     for (let x = minX; x <= maxX; x += stride) {
         context.lineTo(normx(x), normy(f(x)));
         context.stroke();
