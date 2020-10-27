@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz06</title>
+</head>
+<body>
+<script>
+
+    /* Aufgabe 13 */
+
+    // function Empty() { }
+    // const empty = new Empty();
+    // Empty.prototype.answer = 42;
+    // document.writeln(empty.answer === 42);
+    // ==> shows true
+
+    // const Empty = ( () => {
+    //     function Empty() { }
+    //     return Empty;
+    // }) ();
+    // const empty = Empty;
+    // document.writeln(empty instanceof Empty);
+    // ==> shows false
+
+    // const Empty = ( () => {
+    //     function Empty() {}
+    //     return Empty;
+    // }) ();
+    // const empty = new Empty;
+    // const also = new Empty;
+    // Empty.prototype.answer = 42;
+    // document.writeln(
+    //     empty.answer === 42 && also.answer === 42
+    // );
+    // ==> shows true
+
+    // const Empty = ( () => {
+    //     function Empty() { }
+    //     return Empty;
+    // }) ();
+    // const empty = new Empty;
+    // document.writeln(empty instanceof Empty);
+    // ==> shows true
+
+    /* Aufgabe Q14 */
+    const Person = name => {
+        let age = 0;
+        return {
+            getAge: ()  => age,
+            setAge: newAge => age = newAge,
+            getName: () => name,
+            setName: newName => name = newName
+        }
+    };
+
+    // const me = Person("Myself");
+    // me.setAge(50);
+    // document.writeln(me.getAge() === 50);
+    // ==> shows true
+
+    // const me = Person("Myself");
+    // me.setName("Sherlock");
+    // document.writeln(me.getName() === "Sherlock");
+    // ==> shows true
+
+    // const me = Person("Myself");
+    // me.name = "***";
+    // document.writeln(me.getName() === "***");
+    // ==> shows false
+
+    // const me = Person("Myself");
+    // me.age = 50;
+    // document.writeln(me.getAge() === 50);
+    // ==> shows false
+
+    /* Aufgabe Q14a */
+    xs1_ = [1,2,3];
+    xs2_ = [2,3,4];
+    xs3_ = [3,4,5];
+    xs4_ = [4,5,6];
+    ys1_ = [1,2,3];
+    ys2_ = [4,3,2];
+    ys3_ = [3,4,5];
+    ys4_ = [4,5,6];
+
+    Array.prototype.eq = function (y) {
+        if(this.length !== y.length) {
+            return false;
+        }
+        for(let i = 0; i<= y.length; i ++) {
+            if(this[i] !== y[i]) { return false; }
+        }
+        return true;
+    };
+
+    document.writeln(xs1_.eq(ys1_) && ! xs2_.eq(ys2_) && xs3_.eq(ys3_) && ! xs3_.eq(ys4_) && ! xs4_.eq(ys3_));
+
+</script>
+
+</body>
+</html>
