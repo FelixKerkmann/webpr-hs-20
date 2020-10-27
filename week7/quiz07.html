@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz 07</title>
+</head>
+<body>
+    <script>
+
+        /* Aufgabe Q15 */
+        // class Person {
+        //     constructor(name) {
+        //         this.name = name;
+        //     }
+        //     isCool() { return this.name.length > 3};
+        // }
+
+        // const p = new Person("Joe");
+        // p.prototype.isCool = () => true;
+        // document.writeln(p.isCool());
+        // False
+
+        // const p = new Person("Dierk");
+        // document.writeln(p.name === "Dierk");
+        // True
+
+        // const p = new Person("Joe");
+        // p.isCool = () => true;
+        // document.writeln(p.isCool());
+        // ==> shows true
+
+        // const p = new Person ("Joe");
+        // Person.prototype.isCool = () => true;
+        // document.writeln(p.isCool());
+        // ==> shows true
+
+        // const p = new Person("Dierk");
+        // document.writeln(p.isCool());
+        // ==> true
+
+
+
+        /* Aufgabe 16 */
+        // class Person { }
+        // class Student extends Person { }
+        // const s = new Student();
+        // document.writeln(s instanceof Person);
+        // ==> True
+
+
+        /* Aufgabe Q16a */
+        // JavaScript is functional and functional languages should provide function composition.
+        // Let's assume we have functions like
+        const inc    = x => x + 1;
+        const double = x => x * 2;
+        // Provide a general function 'then' that can combine _any_ such functions such that
+        inc.then(double).then(double);
+        // can be used like
+        inc.then(double).then(double) (1) === 8;
+        // Note: you cannot assume what the functions are actually doing.
+        // It must work for all functions!
+
+        function then() {
+            return undefined;
+        }
+
+        // Your solution will be tested against:
+        document.writeln(add.then(mult).then(add) (1) === (1 + add_) * factor_ + add_);
+
+    </script>
+</body>
+</html>
