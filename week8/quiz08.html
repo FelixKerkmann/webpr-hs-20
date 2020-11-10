@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz 08</title>
+</head>
+<body>
+<script>
+    /* Aufgabe 17 */
+    // function Todo(text, done) {
+    //     const check = () => done = true;
+    //     return {
+    //         getText: () => text,
+    //         isDone: () => done,
+    //         check: check
+    //     }
+    // }
+    // let todo = Todo("buy milk", false);
+    // todo.check();
+    // document.writeln(todo.isDone());
+    // ==> true
+
+    // function Todo(text) {
+    //     let done = false;
+    //     const check = () => done = true;
+    //     return {
+    //         getText: () => text,
+    //         isDone: () => done,
+    //         check: check
+    //     }
+    // }
+    // let todo = Todo("buy milk");
+    // todo.check();
+    // document.writeln(todo.isDone());
+    // ==> true
+
+    // function Tode(text) {
+    //     let done = false;
+    //     return {
+    //         getText: () => text,
+    //         isDone: () => done,
+    //         check: done = true
+    //     }
+    // }
+    // let todo = Todo("buy milk");
+    // todo.check();
+    // document.writeln(todo.isDone());
+    // ==> exception
+
+    // function Todo(text) {
+    //     const done = false;
+    //     return {
+    //         getText: () => text,
+    //         isDone: () => done,
+    //         check: () => done = true
+    //     }
+    // }
+    // let todo = Todo("buy milk");
+    // todo.check();
+    // document.writeln(todo.isDone());
+    // ==> exception
+
+    // function Todo(text) {
+    //     let done = false;
+    //     const check = () => this.done = true;
+    //     return {
+    //         getText: () => text,
+    //         isDone: () => done,
+    //         check: check
+    //     }
+    // }
+    // let todo = Todo("buy milk");
+    // todo.check();
+    // document.writeln(todo.isDone());
+    // ==> false
+
+    // function Todo(text) {
+    //     let done = false;
+    //     const check = () => done = true;
+    //     return {
+    //         getText: () => text,
+    //         isDone: () => done,
+    //         check: check
+    //     }
+    // }
+    // let todo = new Todo("buy milk");
+    // todo.check();
+    // document.writeln(todo.isDone());
+    // ==> true
+
+    // function Todo(text, done) {
+    //     function check() {
+    //         done = true
+    //     }
+    //     return {
+    //         getText: () => text,
+    //         isDone: () => done,
+    //         check: check
+    //     }
+    // }
+    // let todo = Todo("buy milk", false);
+    // todo.check();
+    // document.writeln(todo.isDone());
+    // ==> true
+
+    // function Todo(text) {
+    //     let done = false;
+    //     return {
+    //         getText: () => text,
+    //         isDone: () => done,
+    //         check: () => done = true
+    //     }
+    // }
+    // let todo = Todo("buy milk");
+    // todo.check();
+    // document.writeln(todo.isDone());
+    // ==> true
+
+
+    /* Q18 */
+
+    // function handle(callback) {
+    //     const result = [];
+    //     callback(result);
+    //     return result;
+    // }
+    // let it = [];
+    // document.writeln(handle( () => it.push(1) ).length === 1);
+    // ==> fasle
+
+    // function handle(callback) {
+    //     const result = [];
+    //     callback(result);
+    //     return result;
+    // }
+    // document.writeln(handle( () => [1] ).length === 1);
+    // ==> false
+
+    // function handle(callback) {
+    //     const result = [];
+    //     return callback(result);
+    // }
+    // document.writeln(handle( () => [1] ).length === 1);
+    // ==> true
+
+    // function handle(callback) {
+    //     return callback( [] );
+    // }
+    // document.writeln(handle( it => { it.push(1); return it;}).length === 1);
+    // ==> true
+
+    // function handle(callback) {
+    //     const result = [];
+    //     callback(result);
+    //     return result;
+    // }
+    // document.writeln(handle( it => it.push(1)).length === 1);
+    // ==> true
+
+    // function handle(callback) {
+    //     const result = [];
+    //     callback(result);
+    //     callback(result);
+    //     return result;
+    // }
+    // document.writeln(handle( it => it.push(1) ).length === 2);
+    // ==> true
+
+    // function handle(count, callback) {
+    //     const result = [];
+    //     for (let i=0; i < count; i++) {
+    //         callback(result);
+    //     }
+    //     return result;
+    // }
+    // document.writeln(handle(3, it => it.push(1) ).length === 3);
+    // ==> true
+
+    // function handle(callback) {
+    //     const result = [];
+    //     callback(result);
+    //     return result;
+    // }
+    // document.writeln(handle( () => it.push(1) ).length === 1);
+    // ==> exception
+
+    // function handle(callback) {
+    //     const result = [];
+    //     callback(result);
+    //     return result;
+    // }
+    // document.writeln(handle( it.push(1) ).length === 1);
+    // ==> exception
+
+    // function handle(callback) {
+    //     const result = [];
+    //     callback(result);
+    //     return result;
+    // }
+    // let it = [];
+    // document.writeln(handle( it.push(1) ).length === 1);
+    // ==> exception
+
+    // function handle(callback) {
+    //     const result = [];
+    //     callback(result);
+    //     return result;
+    // }
+    // let it = [];
+    // document.writeln(handle( it => it.push(1) ).length === 1);
+    // ==> true
+
+    // function handle(callback) {
+    //     const result = [];
+    //     callback( [] );
+    //     return result;
+    // }
+    // document.writeln(handle( it => it.push(1) ).length === 1);
+    // ==> false
+
+
+
+    /* Q18a */
+    // Provide a function 'failSafe' that - in curried style - takes
+    // - a default value
+    // - a callback function
+    // - an argument to the callback function
+    // that returns whatever the callback function returns given its argument
+    // or the default value if the callback function throws an Error.
+    //
+    //     Note: see how the tests make use of failSafe.
+
+    // function failsafe () {
+    //     return undefined;
+    // }
+    //
+    // const doError    = x => { throw new Error() };
+    // const errorCount = failSafe (1) (doError);
+    //
+    // failSafe (false) (x=>x) (true) && failSafe (true) (doError) (null) && errorCount(null) === 1;
+
+</script>
+</body>
+</html>

@@ -54,13 +54,13 @@
         const inc    = x => x + 1;
         const double = x => x * 2;
         // Provide a general function 'then' that can combine _any_ such functions such that
-        inc.then(double).then(double);
+        //inc.then(double).then(double);
         // can be used like
-        inc.then(double).then(double) (1) === 8;
+        //inc.then(double).then(double) (1) === 8;
         // Note: you cannot assume what the functions are actually doing.
         // It must work for all functions!
-        function then () {
-            return undefined;
+        Number.prototype.then = function (x) {
+            return this.then += x;
         }
 
         // Your solution will be tested against:
