@@ -7,17 +7,17 @@
 <body>
     <script>
         /* Q19 */
-        const Observable = value => {
-            const listeners = [];
-            return {
-                onChange: callback => listeners.push(callback),
-                getValue: () => value,
-                setValue: val => {
-                    value = val;
-                    listeners.forEach(listener => listener(val));
-                }
-            }
-        };
+        // const Observable = value => {
+        //     const listeners = [];
+        //     return {
+        //         onChange: callback => listeners.push(callback),
+        //         getValue: () => value,
+        //         setValue: val => {
+        //             value = val;
+        //             listeners.forEach(listener => listener(val));
+        //         }
+        //     }
+        // };
 
         // const color = Observable('white');
         // let updateCount = 0;

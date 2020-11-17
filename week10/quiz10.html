@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz 10</title>
+</head>
+<body>
+    <script>
+        /* Q24a */
+
+        const x_ = 1;
+        const y_ = 1;
+
+        // *Copy* the following code into the edit area and fill the ___ gaps.
+        const NullSafe = x => {
+            const isNullSafe = y => y && y.then;
+            const maywrap    = y => 0 ; // if y is not NullSafe yet, make it so
+            return {
+                then: fn => isNullSafe(x) ? fn(x) : maywrap(x) // if x is not null or undefined, call fn(x); either way, make sure the result is a NullSafe
+            }
+        };
+
+        // Fill the gaps such that NullSafe objects can be chained with their "then" function
+        // just like Promises do, incl. auto-promotion of result values to NullSafe objects.
+
+        NullSafe(1).then(console.log);                   // will call the log
+        NullSafe(null).then(console.log);                // will not call the log
+        NullSafe(2).then( x => null).then(console.log);  // will not call the log
+
+        // Your solution will be tested against:
+        // x_ and y_ are given. do not override.
+        NullSafe(x_)
+            .then( x => x*2)          // must auto-promote
+            .then( x => NullSafe(x))  // must not auto-promote
+            .then( x => y_ = x + 1)   // store value, check no double promotion
+            .then( x => null)         // jump over rest
+            .then( x => x.mustNotBeCalled) !== null && y_ === x_ * 2 + 1;
+
+
+    </script>
+
+</body>
+</html>
