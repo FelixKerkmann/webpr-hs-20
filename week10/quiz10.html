@@ -6,6 +6,64 @@
 </head>
 <body>
     <script>
+
+        /* Q23  */
+
+        // const idPromise = x => new Promise(resolve => resolve(x));
+        //
+        // const writer = x => {
+        //     document.writeln(x);
+        //     return idPromise(x);
+        // };
+        // // const inc = n => n+1;
+        // const filterEven = n => n % 2 === 0 ? n : undefined;
+        //
+        // idPromise(1)
+        //     .then(writer)
+        //     .then(filterEven)
+        //     .then(writer);
+        // ==> shows 1 undefined
+
+        // idPromise(1).then(it => document.writeln(it));
+        // ==> shows 1
+
+        // idPromise(1)
+        //     .then(it => { document.writeln(it); return it; })
+        //     .then(it => document.writeln(it));
+        // ==> shows 1 1
+
+        // const writer = x => {
+        //     document.writeln(x);
+        //     return idPromise(x);
+        // };
+        // const filterEven = n => { if (n % 2 === 0) return n; else throw Error("not even")};
+        // idPromise(1)
+        //     .then(writer)
+        //     .then(filterEven)
+        //     .then(writer)
+        //     .catch(err => {} );
+        // ==> shows 1
+
+        /* Q24 */
+
+        // const idPromise = x => new Promise(resolve => resolve(x));
+        // const failPromise = err => new Promise((resolve, reject) => reject(err));
+        //
+        // const writer = x => {
+        //     document.writeln(x);
+        //     return idPromise(x);
+        // };
+        //
+        // const inc = n => idPromise(n+1);
+        // const filterEven = n => n % 2 === 0 ? idPromise(n): failPromise("not even");
+        //
+        // const foo = async i => {
+        //     let x = await idPromise(i);
+        //    document.writeln(x);
+        // };
+        // foo(1);
+        // ==> shows 1
+
         /* Q24a */
 
         const x_ = 1;
@@ -35,7 +93,6 @@
             .then( x => y_ = x + 1)   // store value, check no double promotion
             .then( x => null)         // jump over rest
             .then( x => x.mustNotBeCalled) !== null && y_ === x_ * 2 + 1;
-
 
     </script>
 
